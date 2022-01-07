@@ -17,5 +17,15 @@ def send_fcm_notificaion(title, body):
         'Content-Type': 'application/json; UTF-8',
     }
     
+    content = {
+        'registration_ids':  'fkZ6zZkCRSuD9con9BNVmY:APA91bEIzvGvcp24XPm6PKA4V9WioJYbeVylj4FHUiWXlvfHZYJJ3pJd1jAXpEslhKvvqmxUI25Gdiny1NjLNvrmYilihhG5gIJpW0rYfPrS8FZ-X-FkzGbEsO5KgiSj5mQsNnp2LMDt',  # 어느 기기에 보낼건지, 디바이스 토큰 cf) 리스트로 넣으면, 여러 기기에 동시전송.
+        'notification':{
+            
+            'title': title,
+            'body': body,
+            
+        }, # 기본양식의 알림.  data-message 로 보내면 : 커스터마이징 지원 알림.
+    }
+    
     # 3. 어떤 방식 
     
