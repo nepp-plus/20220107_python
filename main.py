@@ -48,4 +48,21 @@ def send_fcm_by_library(title, body):
     result = push_service.notify_single_device(registration_id=device_token, message_title=title, message_body=body)
     print(result)
     
-send_fcm_by_library('안녕하세요', '파이썬 pyfcm 라이브러리로 전송합니다.')
+# send_fcm_by_library('안녕하세요', '파이썬 pyfcm 라이브러리로 전송합니다.')
+
+def send_sms_message(phone, message):
+    aligo_url = 'https://apis.aligo.in/send/'
+    aligo_api_key = 'i5m8plmyxhcpwfvty29hbzko2zzgi0nq'
+    
+    data = {
+        'key' : aligo_api_key,
+        'user_id' : 'cho881020',
+        'sender' : '01051123237',
+        'receiver': phone,
+        'msg': message,
+        'testmode_yn': 'y'
+    }
+    
+    requests.post(url=aligo_url, data=data)
+    
+send_sms_message('01051123237', '파이썬으로 문자보내기')
